@@ -1,9 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faUser, faSignInAlt, faUserPlus, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { AuthContext } from '../contexts/AuthContext.jsx'; // Assurez-vous que le chemin est correct
 
 function Navbar() {
-  const isLoggedIn = true; // Remplacez par la logique de connexion réelle
-  const username = "Utilisateur"; // Remplacez par le nom d'utilisateur réel
+  const { isLoggedIn, username, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login'); // Redirige vers la page de connexion après la déconnexion
+  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -15,26 +23,36 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Accueil</Link>
+              <Link className="nav-link" to="/">
+                <FontAwesomeIcon icon={faHome} /> Accueil
+              </Link>
             </li>
+          </ul>
+          <ul className="navbar-nav ms-auto">
             {isLoggedIn ? ( // Si l'utilisateur est connecté
               <>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/profile">Profil ({username})</Link>
+                  <Link className="nav-link" to="/profile">
+                    <FontAwesomeIcon icon={faUser} /> Profil ({username})
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <button className="btn btn-link nav-link" onClick={() => { /* Logique de déconnexion */ }}>
-                    Déconnexion
+                  <button className="btn btn-link nav-link" onClick={handleLogout}>
+                    <FontAwesomeIcon icon={faSignOutAlt} /> Déconnexion
                   </button>
                 </li>
               </>
             ) : ( // Si l'utilisateur n'est pas connecté
               <>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/login">Connexion</Link>
+                <li className="nav-item me-2">
+                  <Link className="nav-link" to="/login">
+                    <FontAwesomeIcon icon={faSignInAlt} /> Connexion
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/signup">Inscription</Link>
+                  <Link className="nav-link" to="/signup">
+                    <FontAwesomeIcon icon={faUserPlus} /> Inscription
+                  </Link>
                 </li>
               </>
             )}
