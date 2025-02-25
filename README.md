@@ -3,7 +3,6 @@
 [![{68E81F16-0728-48F3-A50C-1C30631C453D}](https://github.com/user-attachments/assets/1fae3e74-689e-438b-b7bb-10942731745f)](https://github.com/user-attachments/assets/1fae3e74-689e-438b-b7bb-10942731745f)
 
 
-## Description du Projet
 
 [![{8778E55C-06E1-4105-BD92-065ED3F0ADDA}](https://github.com/user-attachments/assets/270ac816-a12f-43a1-a9a2-317be01c8875)](https://github.com/user-attachments/assets/270ac816-a12f-43a1-a9a2-317be01c8875)
 
@@ -13,14 +12,13 @@
 
 
 
-
-
 [![{7D1C8334-974F-4EC0-9552-ACBE167821DB}](https://github.com/user-attachments/assets/f5c61756-13ce-4f51-978b-d6d90a94424b)](https://github.com/user-attachments/assets/f5c61756-13ce-4f51-978b-d6d90a94424b)
 
 
-## Utilisation
 
 [![{DAB0D462-E705-4B61-8845-C2FFCBAA0743}](https://github.com/user-attachments/assets/e571fc3a-af75-4090-978b-5372191eb844)](https://github.com/user-attachments/assets/e571fc3a-af75-4090-978b-5372191eb844)
+
+## Utilisation
 
 Pour démarrer le projet, exécutez : `npm start` ou `yarn start`
 
